@@ -1,0 +1,135 @@
+---
+title: "ECF Chinook quota planning model report"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    toc: true
+params:
+  tabs: NULL
+  figs: NULL
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.width = 10, fig.height = 7.5)
+```
+
+## Number of fishers
+
+```{r fishers, message=FALSE, warning=FALSE}
+
+
+params$tabs$licences_tab
+```
+
+
+## Season concepts (days /week)
+
+```{r seasons, message=FALSE, warning=FALSE}
+
+
+params$tabs$schle_tab
+```
+
+\pagebreak
+
+## Total Kept Chinook (potentially a quota)
+
+
+```{r chkquota, message=FALSE, warning=FALSE}
+#add month days
+params$tabs$quotas_tab 
+
+```
+
+
+
+
+## Catch per fisher 
+
+```{r catch, message=FALSE, warning=FALSE}
+
+## make wider
+params$figs$catch 
+```
+
+
+## Catch per fisher per day 
+
+```{r cperday,   message=FALSE, warning=FALSE}
+## make wider
+params$figs$cperday 
+
+```
+
+<!-- ## Discussion -->
+<!-- - There are substantial coho harvest opportunities -->
+<!-- - Wild tule impacts and potentially upriver bright impacts will likely constrain the fishery -->
+<!-- - Fishing later allows access to coho with lower daily impacts on Chinook -->
+\pagebreak
+
+## Catch and morts by gear (per fisher)
+
+```{r fish_tots_per_fisher, message=FALSE, warning=FALSE}
+params$tabs$total_per_fisher_sumry_tab 
+```
+
+<!-- \pagebreak -->
+
+## Total ECF allocation and predicted impacts
+
+
+```{r allocation, message=FALSE, warning=FALSE}
+params$tabs$allctn_tab
+```
+
+
+
+<!-- \pagebreak -->
+
+## Total ECF catch and morts (all fishers combined)
+
+```{r fish_tots, message=FALSE, warning=FALSE}
+params$tabs$total_sumry_tab
+
+```
+
+## Run sizes and mark rates grouped
+
+```{r run_grouped, message=FALSE, warning=FALSE}
+params$tabs$run_size_group_tab
+
+```
+
+## Run sizes and mark rates detail
+
+Note: LRBs are added to the PUBs for this modeling
+
+
+```{r run_dtls, message=FALSE, warning=FALSE}
+params$tabs$run_size_tab
+
+```
+
+## Daily impact rates per fisher by week in zones 1-3 (a reference for concept shaping)
+
+Note: LRBs are added to the PUBs for this modeling
+
+```{r daily_ave13, message=FALSE, warning=FALSE}
+params$figs$weekly_impacts_fig$z13
+
+```
+
+## Daily impact rates per fisher by week in zones 4-5 (a reference for concept shaping)
+
+Note: LRBs are added to the PUBs for this modeling
+
+```{r daily_ave45, message=FALSE, warning=FALSE}
+params$figs$weekly_impacts_fig$z45
+
+```
+
+<style>
+.table {
+  font-size: 1.0em; /* Adjust the font size as needed */
+}
+</style>
