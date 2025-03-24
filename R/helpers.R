@@ -30,6 +30,7 @@ calweek <- function(dates, week_start=7){
 #' @param filename Character. The name of the saved file. Defaults to "template.xlsx".
 #' @return The full path of the saved file.
 #' @export
+
 download_template <- function(path = ".", filename = "Inputs.xlsx") {
   template_path <- system.file("extdata", "Inputs.xlsx", package = "ECFchinook")
 

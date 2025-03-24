@@ -1,5 +1,5 @@
 Package: ECFchinook
-Title: What the Package Does (One Line, Title Case)
+Title: Predicting impacts in emerging commercial gear fisheries
 Version: 0.0.0.9000
 Authors@R: 
     person("Mark", "Sorel", , "mark.sorel@dfw.wa.gov", role = c("aut", "cre"),
