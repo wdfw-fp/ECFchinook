@@ -65,7 +65,7 @@ ECF_mod_report<-function(Input_path=system.file("extdata","Inputs.xlsx", package
 
   rmarkdown::render(
     input = template_path,
-    output_file = file.path(output_dir, paste0(output_file,".html"),),
+    output_file = file.path(output_dir, paste0(output_file,".html")),
     params = list(
       tabs=ECF_Mod_out$tabs,
       figs=ECF_Mod_out$figs
