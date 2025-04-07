@@ -54,7 +54,7 @@ ECF_mod_report<-function(Input_path=system.file("extdata","Inputs.xlsx", package
 
   readr::write_csv(ECF_Mod_out$sum_res$stlhead,file.path(output_dir,paste0(output_file,"_steelhead_impacts_for_preseason_model",".csv")))
 
-  readr::write_csv(ECF_Mod_out$sum_res$impacts_for_MR,file.path(output_dir, paste0(output_file,"Chinook_impacts_for_preseason_model",".csv")))
+  readr::write_csv(ECF_Mod_out$sum_res$impacts_for_MR,file.path(output_dir, paste0(output_file,"_Chinook_impacts_for_preseason_model",".csv")))
 
 
   template_path <- system.file("rmarkdown","templates","ecf-model-report" ,"skeleton","skeleton.Rmd", package = "ECFchinook")
