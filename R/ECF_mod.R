@@ -29,7 +29,7 @@ ECF_mod<-function(path=system.file("extdata","Inputs.xlsx", package = "ECFchinoo
 #'
 #'
 #' @param year Number. The year to model
-#' @param output_file Charachter. The file name for the report. must end in ".html"
+#' @param output_file Charachter. The file name for the report.
 #' @param output_dir The output directory for the report. Defaults to the current working directory.
 #' @param Input_path
 #' @param find_quota Boolean. TRUE to find the maximum number of kept Chinook for fishing with the distribution of effort specified in the schedule tab. FALSE to find the expected catch with days of week specified in the schedule tab.
@@ -43,7 +43,7 @@ ECF_mod<-function(path=system.file("extdata","Inputs.xlsx", package = "ECFchinoo
 ECF_mod_report<-function(Input_path=system.file("extdata","Inputs.xlsx", package = "ECFchinook") ,
                          year=2025,
                          find_quota=TRUE,
-                         output_file = "ECF Chinook quota planning report.html",
+                         output_file = "ECF Chinook quota planning report",
                          output_dir = getwd(),
                          ...){
 
@@ -52,9 +52,9 @@ ECF_mod_report<-function(Input_path=system.file("extdata","Inputs.xlsx", package
 
   Sys.Date()
 
-  readr::write_csv(ECF_Mod_out$sum_res$stlhead,file.path(output_dir,paste0("ECF_weekly_steelhead_impacts_for_preseason_model_",Sys.Date(),".csv")))
+  readr::write_csv(ECF_Mod_out$sum_res$stlhead,file.path(output_dir,paste0(output_file,"_steelhead_impacts_for_preseason_model",".csv")))
 
-  readr::write_csv(ECF_Mod_out$sum_res$impacts_for_MR,file.path(output_dir, paste0("ECF_impacts_for_preseason_model_",Sys.Date(),".csv")))
+  readr::write_csv(ECF_Mod_out$sum_res$impacts_for_MR,file.path(output_dir, paste0(output_file,"Chinook_impacts_for_preseason_model",".csv")))
 
 
   template_path <- system.file("rmarkdown","templates","ecf-model-report" ,"skeleton","skeleton.Rmd", package = "ECFchinook")
@@ -65,7 +65,7 @@ ECF_mod_report<-function(Input_path=system.file("extdata","Inputs.xlsx", package
 
   rmarkdown::render(
     input = template_path,
-    output_file = file.path(output_dir, output_file),
+    output_file = file.path(output_dir, paste0(output_file,".html"),),
     params = list(
       tabs=ECF_Mod_out$tabs,
       figs=ECF_Mod_out$figs

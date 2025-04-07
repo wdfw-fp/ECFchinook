@@ -8,7 +8,7 @@ ECF_mod_report(
   Input_path = system.file("extdata", "Inputs.xlsx", package = "ECFchinook"),
   year = 2025,
   find_quota = TRUE,
-  output_file = "ECF Chinook quota planning report.html",
+  output_file = "ECF Chinook quota planning report",
   output_dir = getwd(),
   ...
 )
@@ -18,7 +18,7 @@ ECF_mod_report(
 
 \item{find_quota}{Boolean. TRUE to find the maximum number of kept Chinook for fishing with the distribution of effort specified in the schedule tab. FALSE to find the expected catch with days of week specified in the schedule tab.}
 
-\item{output_file}{Charachter. The file name for the report. must end in ".html"}
+\item{output_file}{Charachter. The file name for the report.}
 
 \item{output_dir}{The output directory for the report. Defaults to the current working directory.}
 
